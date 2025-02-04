@@ -211,98 +211,55 @@ vagrant ssh
 
 Una vez que todo esté corriendo, puedes acceder a la aplicación a través del navegador en la dirección `http://app.izv`.
 
-## Incluir Imágenes
-
-Puedes añadir imágenes al proyecto y colocarlas en el directorio `/imágenes`. Estas imágenes podrían representar el proceso de configuración o capturas de pantalla de la aplicación en funcionamiento. Para agregar las imágenes, coloca los archivos en el directorio `imágenes` de tu repositorio y referencia las imágenes en la documentación si es necesario.
-
-Ejemplo de cómo se añadirían las imágenes:
-
-```bash
-/imágenes
-├── nginx_server_status.png       # Captura de pantalla del estado de NGINX
-├── flask_app_running.png         # Captura de la aplicación Flask corriendo
-└── nginx_configuration.png       # Captura de la configuración de NGINX
-```
-
-Luego puedes incluir los archivos en la documentación con Markdown para mostrar los resultados visualmente.
-
-```markdown
-![Estado de NGINX](imágenes/nginx_server_status.png)
-```
-
-## Comandos útiles
-
-- **Arrancar la máquina virtual**:
-
-```bash
-vagrant up
-```
-
-- **Acceder a la máquina virtual**:
-
-```bash
-vagrant ssh
-```
-
-- **Detener la máquina virtual**:
-
-```bash
-vagrant halt
-```
-
-- **Ver el estado de NGINX**:
-
-```bash
-sudo systemctl status nginx
-```
-
-- **Ver los logs de la aplicación**:
-
-```bash
-tail -f /var/log/nginx/app.access.log
-tail -f /var/log/nginx/app.error.log
-```
-
 ### Sección de Imágenes
 
 1. Añadir la dirección IP para acceder a la APP en /etc/hosts
 En este paso, añadimos la dirección IP 192.168.56.10 en el archivo /etc/hosts para que podamos acceder a la aplicación a través del nombre de dominio app.izv o www.app.izv.
 
+![añadimos la dirección IP para acceder a la APP en etc hosts](https://github.com/user-attachments/assets/97a00134-1571-400d-9caa-927781c65e38)
 
-2. Aplicación desplegada en Internet
+
+3. Aplicación desplegada en Internet
 Una vez configurado el servidor, la aplicación Flask estará disponible en el navegador a través del dominio configurado en el archivo /etc/hosts.
 
+![aplicación desplegada](https://github.com/user-attachments/assets/75065287-d84b-4fc0-82a2-a1152a0ef08b)
+![app desplegada](https://github.com/user-attachments/assets/0347cfe9-8d09-4287-abb4-53f3344525a2)
 
-3. Comprobamos que el servidor de NGINX funciona
+
+5. Comprobamos que el servidor de NGINX funciona
 Comprobamos que el servidor NGINX esté funcionando correctamente. Esto se puede hacer revisando el estado de NGINX y verificando que no haya errores en su configuración.
 
+![instalamos y activamos el servidor NGINX](https://github.com/user-attachments/assets/bd9d2043-8909-427e-a14c-ea23c1c967ea)
 
-4. Despliegue en Flask
+
+7. Despliegue en Flask
 Aquí verificamos que la aplicación Flask esté corriendo y accesible. En esta imagen se muestra cómo se puede acceder a la página principal de la aplicación Flask, por ejemplo, en http://app.izv.
 
+![despliegue en flask](https://github.com/user-attachments/assets/e99e3e2c-f234-4a19-a22c-f680994a0329)
 
-5. Despliegue en Gunicorn
+8. Despliegue en Gunicorn
 Gunicorn es el servidor que ejecuta la aplicación Flask. En este paso verificamos que Gunicorn esté manejando correctamente las solicitudes HTTP.
 
+![despliegue gunicorn](https://github.com/user-attachments/assets/f8e581b9-ab2b-4cdd-9b08-d29e29566a9d)
 
-6. Iniciamos entorno virtual con Flask
+9. Iniciamos entorno virtual con Flask
 Aquí configuramos y activamos un entorno virtual para asegurarnos de que todas las dependencias de Python estén aisladas y gestionadas correctamente.
+![Iniciamos entorno virtual con FLASK](https://github.com/user-attachments/assets/899f8513-2299-4b47-94da-4e6e2c3eae69)
 
 
-7. Instalamos Flask y Gunicorn
+10. Instalamos Flask y Gunicorn
 En este paso, instalamos las dependencias necesarias para el proyecto, como Flask y Gunicorn, que se utilizan para ejecutar la aplicación y servirla a través de HTTP.
 
+![Instalamos flask y Gunicorn](https://github.com/user-attachments/assets/e1e519b2-0652-46fa-bffc-2432f27c3962)
 
-8. Instalamos y activamos el servidor NGINX
+11. Instalamos y activamos el servidor NGINX
 Se instala y activa el servidor NGINX. Este servidor web se configura para actuar como un proxy inverso y redirigir las solicitudes a la aplicación Flask ejecutada por Gunicorn.
 
+![instalamos y activamos el servidor NGINX](https://github.com/user-attachments/assets/66c29c99-57db-4aef-ab62-44b0c00ac283)
 
-9. Una vez añadimos los permisos, nos metemos en la aplicación
+12. Una vez añadimos los permisos, nos metemos en la aplicación
 Finalmente, después de configurar correctamente los permisos y asegurarnos de que todos los servicios estén corriendo, podemos acceder a la aplicación Flask en el navegador.
 
-
-## Conclusión
-
-Este proyecto proporciona un entorno completo para desplegar una aplicación web Flask con **Vagrant**, **Gunicorn** y **NGINX**. Sigue los pasos para configurar y ejecutar la máquina virtual y accede a la aplicación en tu navegador.
+![Una vez añadimos los permisos nos metemos en la aplicación](https://github.com/user-attachments/assets/5edf712c-95b0-409a-911c-1cdb58c30065)
 
 ---
